@@ -254,11 +254,10 @@ export default function LandingPage() {
       <main className="relative z-hero min-h-screen flex flex-col items-center justify-center px-6">
         {/* Hero section */}
         <div className="flex flex-col items-center text-center gap-6 max-w-2xl w-full">
-          {/* Heading — fixed: sm:mobile size, md:desktop size (TC-005/006) */}
+          {/* Heading — base: mobile clamp (≤639px), sm: desktop clamp (≥640px) */}
           <h1
-            className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent-1 via-accent-2 via-accent-3 via-accent-4 via-accent-3 via-accent-2 to-accent-1 animate-gradientShift animate-fadeInUp hello-world-glow"
+            className="text-display-mobile sm:text-display font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent-1 via-accent-2 via-accent-3 via-accent-4 via-accent-3 via-accent-2 to-accent-1 animate-gradientShift animate-fadeInUp hello-world-glow"
             style={{
-              fontSize: "clamp(2.8rem, 15vw, 4.5rem)",
               lineHeight: "1.1",
               animationDelay: animations.heroFadeDelay,
             }}
@@ -279,7 +278,7 @@ export default function LandingPage() {
             {hero.tagline}
           </p>
 
-          {/* CTA button — fixed: sm:mobile sizing (TC-015) */}
+          {/* CTA button — sm: mobile sizing (TC-015) */}
           <button
             ref={ctaRef}
             onClick={openOverlay}
