@@ -222,7 +222,7 @@ function SuccessOverlay({
   );
 }
 
-/* ─── Main page ──────────────────────────────────────────────── */
+/* ─── Main page ─────────────────────────────────────────────── */
 export default function LandingPage() {
   const [overlayOpen, setOverlayOpen] = useState(false);
   const ctaRef = useRef<HTMLButtonElement>(null);
@@ -254,9 +254,9 @@ export default function LandingPage() {
       <main className="relative z-hero min-h-screen flex flex-col items-center justify-center px-6">
         {/* Hero section */}
         <div className="flex flex-col items-center text-center gap-6 max-w-2xl w-full">
-          {/* Heading — base: mobile clamp (≤639px), sm: desktop clamp (≥640px) */}
+          {/* Heading — base: mobile clamp (≤639px), md: desktop clamp (≥768px) per TC-006 */}
           <h1
-            className="text-display-mobile sm:text-display font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent-1 via-accent-2 via-accent-3 via-accent-4 via-accent-3 via-accent-2 to-accent-1 animate-gradientShift animate-fadeInUp hello-world-glow"
+            className="text-display-mobile md:text-display font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent-1 via-accent-2 via-accent-3 via-accent-4 via-accent-3 via-accent-2 to-accent-1 animate-gradientShift animate-fadeInUp hello-world-glow"
             style={{
               lineHeight: "1.1",
               animationDelay: animations.heroFadeDelay,
@@ -278,15 +278,14 @@ export default function LandingPage() {
             {hero.tagline}
           </p>
 
-          {/* CTA button — sm: mobile sizing (TC-015) */}
+          {/* CTA button — mobile sizing (≤640px): py-[0.875rem] px-8 text-[0.95rem]
+              Desktop sizing (≥640px): sm:py-4 sm:px-10 sm:text-[1.05rem] per TC-015 */}
           <button
             ref={ctaRef}
             onClick={openOverlay}
             aria-label={cta.ariaLabel}
-            className="focus-ring rounded-pill animate-fadeInUp relative overflow-hidden group"
+            className="focus-ring rounded-pill animate-fadeInUp relative overflow-hidden group py-[0.875rem] px-8 sm:py-4 sm:px-10 text-[0.95rem] sm:text-[1.05rem]"
             style={{
-              padding: "1rem 2.5rem",
-              fontSize: "1.05rem",
               fontWeight: 600,
               color: "#fff",
               background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
