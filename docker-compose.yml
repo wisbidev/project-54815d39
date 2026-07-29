@@ -1,0 +1,22 @@
+# This project is STATIC — no backend, no database.
+# docker-compose.yml is present for consistency with repo conventions
+# but the frontend runs standalone with: cd code/frontend && npm run dev
+# Run "docker compose -f docker-compose.yml config" to validate the file.
+
+services:
+  frontend:
+    build:
+      context: ./code/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_API_URL=http://localhost:3000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
