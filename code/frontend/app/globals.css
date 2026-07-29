@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #0b0e1a;
+  --color-surface: #0b0e1a;
+  --color-surface-raised: rgba(11, 14, 26, 0.92);
+  --color-border: rgba(255, 255, 255, 0.2);
+  --color-text: rgba(255, 255, 255, 0.6);
+  --color-text-muted: rgba(255, 255, 255, 0.2);
+  --color-inverse: #fff;
+  --color-primary-start: #6366f1;
+  --color-primary-end: #8b5cf6;
+  --color-accent-1: #818cf8;
+  --color-accent-2: #a78bfa;
+  --color-accent-3: #f472b6;
+  --color-accent-4: #fb923c;
+  --color-particle: rgba(255, 255, 255, 0.3);
+  --color-focus: #a78bfa;
+  --color-overlay-close-bg: rgba(255, 255, 255, 0.1);
+  --color-overlay-close-hover: rgba(255, 255, 255, 0.18);
+  --radius-pill: 50px;
+  --radius-circle: 50%;
+  --shadow-cta-hover: 0 12px 40px rgba(99, 102, 241, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
